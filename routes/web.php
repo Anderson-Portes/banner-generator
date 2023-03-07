@@ -22,7 +22,7 @@ Route::post('/download', function (Request $request) {
     $content = $request->content;
     $url_photo = $request->file('photo');
     $url_photo = str_replace('public', asset('/storage/'), $url_photo->store('/public'));
-    header("Content-type: text/html");
-    header("Content-Disposition: attachment; filename=view.html");
+    // header("Content-type: text/html");
+    // header("Content-Disposition: attachment; filename=view.html");
     return view('download', compact('url_photo', 'content'));
 })->name('download');
